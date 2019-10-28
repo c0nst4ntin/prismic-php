@@ -1,0 +1,14 @@
+{
+    "name": "c0nst4ntin/prismic-php-starter",
+    "description": "A simple prismicio boilerplate using php",
+    "require": {
+        "prismic/php-sdk": "^5.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Constantin Ross",
+            "email": "contact@constantinross.com"
+        }
+    ]
+}
