@@ -1,0 +1,21 @@
+{
+  "name": "prismic-php-starter",
+  "version": "1.0.0",
+  "description": "A simple prismicio boilerplate using php and gulpjs",
+  "scripts": {
+    "watch": "gulp",
+    "build": "gulp build",
+    "serve": "php -S localhost:8000 -t public/"
+  },
+  "author": {
+    "name": "Constantin Ross",
+    "email": "contact@constantinross.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2"
+  }
+}
