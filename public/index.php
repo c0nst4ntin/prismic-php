@@ -1,5 +1,8 @@
 <?php
-// Load Bootstraper
+
+/********************************************
+ *                 PHP CODE                 *
+ ********************************************/
 include_once __DIR__ . '/../bootstrap/app.php';
 
 use Prismic\Dom\RichText;
@@ -10,14 +13,38 @@ $description = $document->data->description;
 
 $descriptionHtml = RichText::asHtml($description);
 
-echo '<script src="' . path_relative_to_root(__DIR__) . 'js/app.min.js"></script>';
-echo '<link rel="stylesheet" href="' . path_relative_to_root(__DIR__) . 'css/styles.min.css"/>';
+/********************************************
+ *                 HTML CODE                *
+ ********************************************/
 ?>
 
-<div>
-    <a href="">Home</a> <a href="/about">About</a>
-</div>
+<!DOCTYPE html>
+<html lang="en">
 
-<?php
-echo $descriptionHtml;
-?>
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.min.css">
+
+    <!-- Title -->
+    <title>Document</title>
+</head>
+
+<body>
+    <nav id="navigation">
+        <a href="">Home</a> <a href="/about">About</a>
+    </nav>
+    <main id="main">
+        <section id="text">
+            <?php echo $descriptionHtml; ?>
+        </section>
+    </main>
+    <!-- Scripts -->
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>
