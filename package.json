@@ -1,6 +1,6 @@
 {
   "name": "prismic-php-starter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple prismicio boilerplate using php and gulpjs",
   "scripts": {
     "watch": "gulp",
