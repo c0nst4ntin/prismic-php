@@ -5,6 +5,7 @@
  */
 
 const srcPath                       = './resources/'
+const staticPath                    = './static/'
 const distPath                      = './public/'
 
 
@@ -45,6 +46,11 @@ function buildViews() {
         .pipe(dest(distPath))
 }
 
+function copyStaticAssets() {
+    return src(staticPath + '**/*')
+        .pipe(dest(distPath))
+}
+
 /**
  * ----------------------------------------------------------------------
  *  Define exports/tasks
@@ -55,10 +61,12 @@ exports.default = () => {
     watch(srcPath + 'js/**/*.js', buildJS)
     watch(srcPath + 'scss/**/*.scss', buildScss)
     watch(srcPath + 'views/**/*.php', buildViews)
+    watch(staticPath + '**/*', copyStaticAssets)
 }
 
 exports.build = series([
     buildJS,
     buildScss,
-    buildViews
+    buildViews,
+    copyStaticAssets
 ])
