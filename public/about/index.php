@@ -4,14 +4,17 @@
  *                 PHP CODE                 *
  ********************************************/
 include_once __DIR__ . '/../../bootstrap/app.php';
+include_once __DIR__ . '/../../app/Prismic/WebLinkResolver.php';
 
 use Prismic\Dom\RichText;
+
+$linkResolver = new WebLinkResolver();
 
 $document = $api->getByUID('page', 'about');
 
 $description = $document->data->description;
 
-$descriptionHtml = RichText::asHtml($description);
+$descriptionHtml = RichText::asHtml($description, $linkResolver);
 
 /********************************************
  *                 HTML CODE                *
